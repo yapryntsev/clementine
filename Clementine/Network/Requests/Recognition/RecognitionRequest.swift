@@ -19,7 +19,7 @@ struct RecognitionRequest: JsonRequest {
     }
 
     var routes: HttpRoute {
-        ["recognition"]
+        ["v1", "recognition"]
     }
 
     var body: HttpBody {
