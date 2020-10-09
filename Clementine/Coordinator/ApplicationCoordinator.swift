@@ -6,33 +6,25 @@
 //
 
 import UIKit
-import AVFoundation
 
 final class ApplicationCoordinator {
 
-    var window: UIWindow
+    private weak var navigation: UINavigationController?
+    private var child: Coordinator?
 
-    init(window: UIWindow) {
-        self.window = window
+    init(navigation: UINavigationController?) {
+        self.navigation = navigation
     }
 
     func start() {
-        showCameraScreen()
+        startCameraCoordinator()
     }
 
-    private func showCameraScreen() {
+    private func startCameraCoordinator() {
+        
+        let coordinator = CameraCoordinator(navigation: navigation)
 
-        let session = AVCaptureSession()
-        let controller = CameraController(session: session)
-
-        controller.output = { [unowned self] in
-            self.showMarketeplaceList()
-        }
-
-        window.rootViewController = controller
-    }
-
-    private func showMarketeplaceList() {
-
+        coordinator.start()
+        child = coordinator
     }
 }
