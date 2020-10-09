@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Squid",
+        "repositoryURL": "https://github.com/borchero/Squid",
+        "state": {
+          "branch": null,
+          "revision": "4dc75c3c68da4a28a0f137f41775442a8c35f923",
+          "version": "1.5.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

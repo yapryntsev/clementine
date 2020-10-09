@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28063AE0253074F9007F50C3 /* CarDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 28063ADF253074F9007F50C3 /* CarDetector.mlmodel */; };
+		2841B2AA25305ED500C5CD65 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2A925305ED500C5CD65 /* Camera.swift */; };
+		2841B2E82530650000C5CD65 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2E72530650000C5CD65 /* Coordinator.swift */; };
+		2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */; };
+		28D81C1E25303598009AC62B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C1D25303598009AC62B /* AppDelegate.swift */; };
+		28D81C2025303598009AC62B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C1F25303598009AC62B /* SceneDelegate.swift */; };
+		28D81C2225303598009AC62B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C2125303598009AC62B /* CameraController.swift */; };
+		28D81C272530359A009AC62B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D81C262530359A009AC62B /* Assets.xcassets */; };
+		28D81C2A2530359A009AC62B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D81C282530359A009AC62B /* LaunchScreen.storyboard */; };
+		28D81C352530359A009AC62B /* ClementineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C342530359A009AC62B /* ClementineTests.swift */; };
+		28D81C402530359A009AC62B /* ClementineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C3F2530359A009AC62B /* ClementineUITests.swift */; };
+		28D81C6F253039E4009AC62B /* Squid in Frameworks */ = {isa = PBXBuildFile; productRef = 28D81C6E253039E4009AC62B /* Squid */; };
+		28D81C7725303B75009AC62B /* RecognitionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C7625303B75009AC62B /* RecognitionRequest.swift */; };
+		28D81C9725303F23009AC62B /* Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81C9625303F23009AC62B /* Recognition.swift */; };
+		28D81CA32530416E009AC62B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81CA22530416E009AC62B /* Service.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28D81C312530359A009AC62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D81C1225303598009AC62B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D81C1925303598009AC62B;
+			remoteInfo = Clementine;
+		};
+		28D81C3C2530359A009AC62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D81C1225303598009AC62B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D81C1925303598009AC62B;
+			remoteInfo = Clementine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28063ADF253074F9007F50C3 /* CarDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarDetector.mlmodel; sourceTree = "<group>"; };
+		2841B2A925305ED500C5CD65 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		2841B2E72530650000C5CD65 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		28D81C1A25303598009AC62B /* Clementine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clementine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D81C1D25303598009AC62B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28D81C1F25303598009AC62B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		28D81C2125303598009AC62B /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		28D81C262530359A009AC62B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28D81C292530359A009AC62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28D81C2B2530359A009AC62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D81C302530359A009AC62B /* ClementineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClementineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D81C342530359A009AC62B /* ClementineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClementineTests.swift; sourceTree = "<group>"; };
+		28D81C362530359A009AC62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D81C3B2530359A009AC62B /* ClementineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClementineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D81C3F2530359A009AC62B /* ClementineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClementineUITests.swift; sourceTree = "<group>"; };
+		28D81C412530359A009AC62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D81C7625303B75009AC62B /* RecognitionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionRequest.swift; sourceTree = "<group>"; };
+		28D81C9625303F23009AC62B /* Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recognition.swift; sourceTree = "<group>"; };
+		28D81CA22530416E009AC62B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28D81C1725303598009AC62B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D81C6F253039E4009AC62B /* Squid in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C2D2530359A009AC62B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C382530359A009AC62B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2841B2E6253064F400C5CD65 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2841B2E72530650000C5CD65 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		284A2BCB253054C000F2850C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		28D81C1125303598009AC62B = {
+			isa = PBXGroup;
+			children = (
+				28D81C1C25303598009AC62B /* Clementine */,
+				28D81C332530359A009AC62B /* ClementineTests */,
+				28D81C3E2530359A009AC62B /* ClementineUITests */,
+				28D81C1B25303598009AC62B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28D81C1B25303598009AC62B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C1A25303598009AC62B /* Clementine.app */,
+				28D81C302530359A009AC62B /* ClementineTests.xctest */,
+				28D81C3B2530359A009AC62B /* ClementineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28D81C1C25303598009AC62B /* Clementine */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C56253035C8009AC62B /* Application */,
+				28D81C62253036EA009AC62B /* Coordinator */,
+				28D81C61253036E4009AC62B /* Controllers */,
+				28D81C6025303693009AC62B /* Models */,
+				28D81C5F25303689009AC62B /* Views */,
+				28D81C6425303700009AC62B /* Network */,
+				28D81C5E25303638009AC62B /* Library */,
+				28D81C5A253035DE009AC62B /* Assets */,
+			);
+			path = Clementine;
+			sourceTree = "<group>";
+		};
+		28D81C332530359A009AC62B /* ClementineTests */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C342530359A009AC62B /* ClementineTests.swift */,
+				28D81C362530359A009AC62B /* Info.plist */,
+			);
+			path = ClementineTests;
+			sourceTree = "<group>";
+		};
+		28D81C3E2530359A009AC62B /* ClementineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C3F2530359A009AC62B /* ClementineUITests.swift */,
+				28D81C412530359A009AC62B /* Info.plist */,
+			);
+			path = ClementineUITests;
+			sourceTree = "<group>";
+		};
+		28D81C56253035C8009AC62B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C2B2530359A009AC62B /* Info.plist */,
+				28D81C1F25303598009AC62B /* SceneDelegate.swift */,
+				28D81C1D25303598009AC62B /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		28D81C5A253035DE009AC62B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				28063ADF253074F9007F50C3 /* CarDetector.mlmodel */,
+				28D81C282530359A009AC62B /* LaunchScreen.storyboard */,
+				28D81C262530359A009AC62B /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		28D81C5E25303638009AC62B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C63253036FC009AC62B /* Base */,
+				28D81C6625303719009AC62B /* Extensions */,
+				2841B2E6253064F400C5CD65 /* Protocols */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		28D81C5F25303689009AC62B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2841B2A925305ED500C5CD65 /* Camera.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28D81C6025303693009AC62B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		28D81C61253036E4009AC62B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C2125303598009AC62B /* CameraController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		28D81C62253036EA009AC62B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		28D81C63253036FC009AC62B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		28D81C6425303700009AC62B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C6525303706009AC62B /* DTOs */,
+				28D81C9E25303F2E009AC62B /* Core */,
+				28D81C9525303F16009AC62B /* Providers */,
+				28D81C7325303A24009AC62B /* Requests */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		28D81C6525303706009AC62B /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		28D81C6625303719009AC62B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		28D81C7325303A24009AC62B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				284A2BCB253054C000F2850C /* Auth */,
+				28D81C7525303B59009AC62B /* Recognition */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		28D81C7525303B59009AC62B /* Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C7625303B75009AC62B /* RecognitionRequest.swift */,
+			);
+			path = Recognition;
+			sourceTree = "<group>";
+		};
+		28D81C9525303F16009AC62B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				28D81C9625303F23009AC62B /* Recognition.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		28D81C9E25303F2E009AC62B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				28D81CA22530416E009AC62B /* Service.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28D81C1925303598009AC62B /* Clementine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D81C442530359A009AC62B /* Build configuration list for PBXNativeTarget "Clementine" */;
+			buildPhases = (
+				28D81C1625303598009AC62B /* Sources */,
+				28D81C1725303598009AC62B /* Frameworks */,
+				28D81C1825303598009AC62B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clementine;
+			packageProductDependencies = (
+				28D81C6E253039E4009AC62B /* Squid */,
+			);
+			productName = Clementine;
+			productReference = 28D81C1A25303598009AC62B /* Clementine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28D81C2F2530359A009AC62B /* ClementineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D81C472530359A009AC62B /* Build configuration list for PBXNativeTarget "ClementineTests" */;
+			buildPhases = (
+				28D81C2C2530359A009AC62B /* Sources */,
+				28D81C2D2530359A009AC62B /* Frameworks */,
+				28D81C2E2530359A009AC62B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D81C322530359A009AC62B /* PBXTargetDependency */,
+			);
+			name = ClementineTests;
+			productName = ClementineTests;
+			productReference = 28D81C302530359A009AC62B /* ClementineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28D81C3A2530359A009AC62B /* ClementineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D81C4A2530359A009AC62B /* Build configuration list for PBXNativeTarget "ClementineUITests" */;
+			buildPhases = (
+				28D81C372530359A009AC62B /* Sources */,
+				28D81C382530359A009AC62B /* Frameworks */,
+				28D81C392530359A009AC62B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D81C3D2530359A009AC62B /* PBXTargetDependency */,
+			);
+			name = ClementineUITests;
+			productName = ClementineUITests;
+			productReference = 28D81C3B2530359A009AC62B /* ClementineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28D81C1225303598009AC62B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					28D81C1925303598009AC62B = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					28D81C2F2530359A009AC62B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 28D81C1925303598009AC62B;
+					};
+					28D81C3A2530359A009AC62B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 28D81C1925303598009AC62B;
+					};
+				};
+			};
+			buildConfigurationList = 28D81C1525303598009AC62B /* Build configuration list for PBXProject "Clementine" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28D81C1125303598009AC62B;
+			packageReferences = (
+				28D81C6D253039E3009AC62B /* XCRemoteSwiftPackageReference "Squid" */,
+			);
+			productRefGroup = 28D81C1B25303598009AC62B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28D81C1925303598009AC62B /* Clementine */,
+				28D81C2F2530359A009AC62B /* ClementineTests */,
+				28D81C3A2530359A009AC62B /* ClementineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28D81C1825303598009AC62B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D81C2A2530359A009AC62B /* LaunchScreen.storyboard in Resources */,
+				28D81C272530359A009AC62B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C2E2530359A009AC62B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C392530359A009AC62B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28D81C1625303598009AC62B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2841B2E82530650000C5CD65 /* Coordinator.swift in Sources */,
+				28D81C2225303598009AC62B /* CameraController.swift in Sources */,
+				28D81C7725303B75009AC62B /* RecognitionRequest.swift in Sources */,
+				28D81C9725303F23009AC62B /* Recognition.swift in Sources */,
+				28D81C1E25303598009AC62B /* AppDelegate.swift in Sources */,
+				2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */,
+				28D81C2025303598009AC62B /* SceneDelegate.swift in Sources */,
+				2841B2AA25305ED500C5CD65 /* Camera.swift in Sources */,
+				28D81CA32530416E009AC62B /* Service.swift in Sources */,
+				28063AE0253074F9007F50C3 /* CarDetector.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C2C2530359A009AC62B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D81C352530359A009AC62B /* ClementineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D81C372530359A009AC62B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D81C402530359A009AC62B /* ClementineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28D81C322530359A009AC62B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D81C1925303598009AC62B /* Clementine */;
+			targetProxy = 28D81C312530359A009AC62B /* PBXContainerItemProxy */;
+		};
+		28D81C3D2530359A009AC62B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D81C1925303598009AC62B /* Clementine */;
+			targetProxy = 28D81C3C2530359A009AC62B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28D81C282530359A009AC62B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D81C292530359A009AC62B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28D81C422530359A009AC62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28D81C432530359A009AC62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28D81C452530359A009AC62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = Clementine/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.Clementine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28D81C462530359A009AC62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = Clementine/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.Clementine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		28D81C482530359A009AC62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = ClementineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.ClementineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clementine.app/Clementine";
+			};
+			name = Debug;
+		};
+		28D81C492530359A009AC62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = ClementineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.ClementineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clementine.app/Clementine";
+			};
+			name = Release;
+		};
+		28D81C4B2530359A009AC62B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = ClementineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.ClementineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clementine;
+			};
+			name = Debug;
+		};
+		28D81C4C2530359A009AC62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8WHHNC99NP;
+				INFOPLIST_FILE = ClementineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.progra-missed.ClementineUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clementine;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28D81C1525303598009AC62B /* Build configuration list for PBXProject "Clementine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D81C422530359A009AC62B /* Debug */,
+				28D81C432530359A009AC62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D81C442530359A009AC62B /* Build configuration list for PBXNativeTarget "Clementine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D81C452530359A009AC62B /* Debug */,
+				28D81C462530359A009AC62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D81C472530359A009AC62B /* Build configuration list for PBXNativeTarget "ClementineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D81C482530359A009AC62B /* Debug */,
+				28D81C492530359A009AC62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D81C4A2530359A009AC62B /* Build configuration list for PBXNativeTarget "ClementineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D81C4B2530359A009AC62B /* Debug */,
+				28D81C4C2530359A009AC62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		28D81C6D253039E3009AC62B /* XCRemoteSwiftPackageReference "Squid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/borchero/Squid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28D81C6E253039E4009AC62B /* Squid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28D81C6D253039E3009AC62B /* XCRemoteSwiftPackageReference "Squid" */;
+			productName = Squid;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 28D81C1225303598009AC62B /* Project object */;
+}
