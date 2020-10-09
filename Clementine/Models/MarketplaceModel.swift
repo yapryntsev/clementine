@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MarketplaceModel: NSObject, ViewModel {
+final class MarketplaceModel: NSObject {
 
     enum Sections: Int, CaseIterable {
         case service
