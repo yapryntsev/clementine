@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Combine
 import AVFoundation
 
 import Vision
 
-class CameraController: UIViewController {
+class CameraController: Controller {
 
     // MARK: - Output
     var output: (() -> Void)?
@@ -19,8 +20,20 @@ class CameraController: UIViewController {
     private let sessionQueue = DispatchQueue(
         label: "ru.clementine.av-session", qos: .userInitiated)
 
+    // MARK: - ML Properties
+    @Published private var detections = [VNRecognizedObjectObservation]()
+
+    private let model: VNCoreMLModel
+    private lazy var detectionRequest: VNCoreMLRequest = {
+        VNCoreMLRequest(model: model) { [weak self] (request, error) in
+            if let results = request.results as? [VNRecognizedObjectObservation] {
+                results.forEach { print($0.labels) }
+            }
+        }
+    }()
+
     // MARK: - Main session for module
-    var session: AVCaptureSession
+    private let session: AVCaptureSession
 
     // MARK: - Setup view as Camera
     override func loadView() {
@@ -34,9 +47,16 @@ class CameraController: UIViewController {
         return view
     }
 
-    init(session: AVCaptureSession) {
+    // MARK: - Init
+    init(session: AVCaptureSession, model: VNCoreMLModel) {
+
         self.session = session
-        super.init(nibName: nil, bundle: nil)
+        self.model = model
+
+        super.init()
+
+        configurate()
+
         sessionQueue.async { [unowned self] in
             self.configurate(session: session)
         }
@@ -46,6 +66,7 @@ class CameraController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraView.session = session
@@ -60,12 +81,25 @@ class CameraController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+
         sessionQueue.async { [unowned self] in
             self.session.stopRunning()
         }
     }
 
-    func configurate(session: AVCaptureSession) {
+    // MARK: - Initial configuration
+    private func configurate() {
+
+        detections.publisher
+            .map { $0 }
+            .sink { object in
+                print(object.uuid)
+            }
+            .store(in: &subscribers)
+
+    }
+
+    private func configurate(session: AVCaptureSession) {
 
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
             return
@@ -98,27 +132,9 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
         from connection: AVCaptureConnection
     ) {
 
-        guard
-            let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
-            let model = try? VNCoreMLModel(for: CarDetector().model)
-        else {
-            return
+        if let buffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+            try? VNImageRequestHandler(cvPixelBuffer: buffer, options: [:])
+                .perform([detectionRequest])
         }
-
-        let request = VNCoreMLRequest(model: model) { (request, error) in
-
-            guard let results = request.results as? [VNClassificationObservation] else {
-                return
-            }
-
-            guard let observation = results.first else {
-                return
-            }
-
-            print(observation.identifier, observation.confidence)
-        }
-
-        try? VNImageRequestHandler(
-            cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
 }
