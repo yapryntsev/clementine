@@ -19,14 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
+        let navigation = UINavigationController()
         let rawWindow = UIWindow(frame: UIScreen.main.bounds)
+
+        // Configurate root navigation controller
+        navigation.setNavigationBarHidden(true, animated: false)
 
         // Configurate window
         rawWindow.windowScene = windowScene
+        rawWindow.rootViewController = navigation
         window = rawWindow
 
         // Configurate coordinator
-        let rawCoordinator = ApplicationCoordinator(window: rawWindow)
+        let rawCoordinator = ApplicationCoordinator(navigation: navigation)
         coordinator = rawCoordinator
 
         window?.makeKeyAndVisible()
