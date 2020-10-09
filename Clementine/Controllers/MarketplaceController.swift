@@ -45,7 +45,9 @@ final class MarketplaceController: Controller {
         collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 
         collection.register(
-            UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+            BrandCell.self, forCellWithReuseIdentifier: BrandCell.reuseIdentifier)
+        collection.register(
+            CarCell.self, forCellWithReuseIdentifier: CarCell.reuseIdentifier)
 
         collection.dataSource = model
         collection.delegate = self

@@ -14,7 +14,7 @@ final class MarketplaceLayout: Layout {
     func create() -> UICollectionViewLayout {
 
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
-        configuration.interSectionSpacing = 32
+        configuration.interSectionSpacing = 24
 
         return UICollectionViewCompositionalLayout(sectionProvider: {
             [weak self] (index, environment) -> NSCollectionLayoutSection? in
@@ -45,18 +45,21 @@ final class MarketplaceLayout: Layout {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(
-            top: 16, leading: 16, bottom: 16, trailing: 16)
 
         // Configurate group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(64)
+            heightDimension: .absolute(148)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitems: [item])
 
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 1
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 16, leading: 16, bottom: 0, trailing: 16)
+
+        return section
     }
 
     private func carList() -> NSCollectionLayoutSection {
@@ -67,17 +70,18 @@ final class MarketplaceLayout: Layout {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(
-            top: 16, leading: 16, bottom: 16, trailing: 16)
 
         // Configurate group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(64)
+            heightDimension: .absolute(128)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitems: [item])
 
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 1
+
+        return section
     }
 }

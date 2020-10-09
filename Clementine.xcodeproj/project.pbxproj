@@ -41,6 +41,8 @@
 		28EDC36F2530E0BC00F4A599 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC36E2530E0BC00F4A599 /* BodyType.swift */; };
 		28EDC3782530E11D00F4A599 /* CarListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3772530E11D00F4A599 /* CarListRequest.swift */; };
 		28EDC3912530E3C400F4A599 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3902530E3C400F4A599 /* Marketplace.swift */; };
+		28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3AD2530F7B300F4A599 /* CarCell.swift */; };
+		28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3B22530F7F800F4A599 /* BrandCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		28EDC36E2530E0BC00F4A599 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
 		28EDC3772530E11D00F4A599 /* CarListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRequest.swift; sourceTree = "<group>"; };
 		28EDC3902530E3C400F4A599 /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
+		28EDC3AD2530F7B300F4A599 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		28EDC3B22530F7F800F4A599 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				2841B2A925305ED500C5CD65 /* Camera.swift */,
+				28EDC3AD2530F7B300F4A599 /* CarCell.swift */,
+				28EDC3B22530F7F800F4A599 /* BrandCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				28D81C9725303F23009AC62B /* Recognition.swift in Sources */,
 				28EDC30E2530B93900F4A599 /* CameraCoordinator.swift in Sources */,
 				28EDC3782530E11D00F4A599 /* CarListRequest.swift in Sources */,
+				28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */,
 				28EDC3402530DC5F00F4A599 /* CarList.swift in Sources */,
 				28D81C1E25303598009AC62B /* AppDelegate.swift in Sources */,
 				2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */,
@@ -529,6 +536,7 @@
 				28EDC34A2530DDB900F4A599 /* CarModel.swift in Sources */,
 				28D81CA32530416E009AC62B /* Service.swift in Sources */,
 				28063AE0253074F9007F50C3 /* CarDetector.mlmodel in Sources */,
+				28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
