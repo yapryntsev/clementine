@@ -45,10 +45,21 @@ extension MarketplaceModel: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "Cell", for: indexPath)
+        guard let section = Sections(rawValue: indexPath.section) else {
+            fatalError("")
+        }
 
-        cell.backgroundColor = .blue
+        let reuseIdentifier: String
+
+        switch section {
+        case .service:
+            reuseIdentifier = BrandCell.reuseIdentifier
+        case .list:
+            reuseIdentifier = CarCell.reuseIdentifier
+        }
+
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: reuseIdentifier, for: indexPath)
 
         return cell
     }
