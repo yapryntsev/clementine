@@ -11,7 +11,7 @@ import Combine
 
 struct Recognition {
 
-    let service = Service()
+    let service = Service(uuid: UUID().uuidString, sessionId: "salam")
 
     enum RecognitionErorr: Error {
         case canNotProvideDataFromImage
