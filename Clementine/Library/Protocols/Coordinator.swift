@@ -7,8 +7,11 @@
 
 import UIKit
 
+@objc
 protocol Coordinator {
 
-    var navigationController: UINavigationController? { get set }
+    weak var navigation: UINavigationController? { get set }
+    var child: Coordinator? { get set }
+
     func start()
 }
