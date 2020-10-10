@@ -13,4 +13,12 @@ final class CarDetailsController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }

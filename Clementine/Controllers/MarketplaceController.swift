@@ -48,6 +48,10 @@ final class MarketplaceController: Controller {
             BrandCell.self, forCellWithReuseIdentifier: BrandCell.reuseIdentifier)
         collection.register(
             CarCell.self, forCellWithReuseIdentifier: CarCell.reuseIdentifier)
+        collection.register(
+            SheetHeader.self,
+            forSupplementaryViewOfKind: SheetHeader.kind,
+            withReuseIdentifier: SheetHeader.reuseIdentifier)
 
         collection.dataSource = model
         collection.delegate = self

@@ -14,23 +14,16 @@ import Vision
 class CameraController: Controller {
 
     // MARK: - Output
-    var output: (() -> Void)?
+    @Published var output: UIImage?
 
     // MARK: - Queue for working with the session
     private let sessionQueue = DispatchQueue(
         label: "ru.clementine.av-session", qos: .userInitiated)
 
-    // MARK: - ML Properties
-    @Published private var detections = [VNRecognizedObjectObservation]()
-
     private let model: VNCoreMLModel
-    private lazy var detectionRequest: VNCoreMLRequest = {
-        VNCoreMLRequest(model: model) { [weak self] (request, error) in
-            if let results = request.results as? [VNRecognizedObjectObservation] {
-                results.forEach { print($0.labels) }
-            }
-        }
-    }()
+
+    // MARK: - View Model
+    private let viewModel: CameraModel
 
     // MARK: - Main session for module
     private let session: AVCaptureSession
@@ -47,15 +40,18 @@ class CameraController: Controller {
         return view
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+
     // MARK: - Init
-    init(session: AVCaptureSession, model: VNCoreMLModel) {
+    init(session: AVCaptureSession, mlModel: VNCoreMLModel, viewModel: CameraModel) {
 
         self.session = session
-        self.model = model
+        self.viewModel = viewModel
+        model = mlModel
 
         super.init()
-
-        configurate()
 
         sessionQueue.async { [unowned self] in
             self.configurate(session: session)
@@ -81,22 +77,9 @@ class CameraController: Controller {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
         sessionQueue.async { [unowned self] in
             self.session.stopRunning()
         }
-    }
-
-    // MARK: - Initial configuration
-    private func configurate() {
-
-        detections.publisher
-            .map { $0 }
-            .sink { object in
-                print(object.uuid)
-            }
-            .store(in: &subscribers)
-
     }
 
     private func configurate(session: AVCaptureSession) {
@@ -132,9 +115,41 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
         from connection: AVCaptureConnection
     ) {
 
-        if let buffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-            try? VNImageRequestHandler(cvPixelBuffer: buffer, options: [:])
-                .perform([detectionRequest])
+        guard
+            let buffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        else {
+            return
         }
+
+        let ciImage = CIImage(cvImageBuffer: buffer).oriented(.right)
+
+        let mlRequest = VNCoreMLRequest(model: model) {
+            [weak self, ciImage] (request, error) in
+
+            guard
+                let results = request.results as? [VNRecognizedObjectObservation],
+                let observation = results.first,
+                observation.confidence > 0.75
+            else {
+                return
+            }
+
+            let bounding = observation.boundingBox
+
+            let x = bounding.origin.x * ciImage.extent.size.width
+            let width = bounding.width * ciImage.extent.size.width
+            let height = bounding.height * ciImage.extent.size.height
+            let y = ciImage.extent.size.height * (1 - bounding.origin.y) - height
+            let rect = CGRect(x: x, y: y, width: width, height: height)
+
+            let croppedImage = ciImage.cropped(to: rect)
+
+            let image = UIImage(ciImage: croppedImage)
+
+            self?.output = UIImage(ciImage: ciImage)
+        }
+
+        try? VNImageRequestHandler(
+            cvPixelBuffer: buffer, orientation: .right, options: [:]).perform([mlRequest])
     }
 }
