@@ -13,7 +13,13 @@ final class MarketplaceLayout: Layout {
 
     func create() -> UICollectionViewLayout {
 
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize, elementKind: "header", alignment: .top)
+
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.boundarySupplementaryItems = [header]
         configuration.interSectionSpacing = 24
 
         return UICollectionViewCompositionalLayout(sectionProvider: {
@@ -49,7 +55,7 @@ final class MarketplaceLayout: Layout {
         // Configurate group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(148)
+            heightDimension: .absolute(80)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitems: [item])
@@ -57,7 +63,7 @@ final class MarketplaceLayout: Layout {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 1
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 16, leading: 16, bottom: 0, trailing: 16)
+            top: 0, leading: 16, bottom: 0, trailing: 16)
 
         return section
     }
@@ -74,7 +80,7 @@ final class MarketplaceLayout: Layout {
         // Configurate group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(128)
+            heightDimension: .absolute(96)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize, subitems: [item])
