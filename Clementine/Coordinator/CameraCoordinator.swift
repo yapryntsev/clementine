@@ -20,27 +20,30 @@ final class CameraCoordinator: Coordinator {
 
     func start() {
         showCameraScreen()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.startMarketplaceCoordinator()
-        }
     }
 
     private func showCameraScreen() {
 
         let session = AVCaptureSession()
-        let model = try! VNCoreMLModel(for: CarDetector().model)
-        let controller = CameraController(session: session, model: model)
+        guard let mlModel = try? VNCoreMLModel(for: CarDetector().model) else {
+            fatalError("Can't get ml model instance")
+        }
+        let viewModel = CameraModel()
+        let controller = CameraController(
+            session: session, mlModel: mlModel, viewModel: viewModel)
 
-        controller.output = { [unowned self] in
-            self.startMarketplaceCoordinator()
+        viewModel.view = controller
+        viewModel.output = { [weak self] brand in
+            self?.startMarketplaceCoordinator(for: brand)
         }
 
         navigation?.show(controller, sender: self)
     }
 
-    private func startMarketplaceCoordinator() {
+    private func startMarketplaceCoordinator(for brand: Brand?) {
 
         let nestedNavigation = UINavigationController()
+        nestedNavigation.setNavigationBarHidden(true, animated: false)
         let coordinator = MarketplaceCoordinator(navigation: nestedNavigation)
 
         coordinator.start()
