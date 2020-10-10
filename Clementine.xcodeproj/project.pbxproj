@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28063AE0253074F9007F50C3 /* CarDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 28063ADF253074F9007F50C3 /* CarDetector.mlmodel */; };
+		280388D425317B8100843F70 /* SheetHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280388D325317B8100843F70 /* SheetHeader.swift */; };
+		280388E02531814D00843F70 /* UIImage+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280388DF2531814D00843F70 /* UIImage+StyleGuide.swift */; };
+		280388EB2531817C00843F70 /* IconStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280388EA2531817C00843F70 /* IconStyleGuide.swift */; };
+		28038CF125319CAA00843F70 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28038CF025319CAA00843F70 /* CameraModel.swift */; };
 		28063AE625308D64007F50C3 /* MarketplaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28063AE525308D64007F50C3 /* MarketplaceController.swift */; };
 		28063AED25308DC2007F50C3 /* MarketplaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28063AEC25308DC2007F50C3 /* MarketplaceLayout.swift */; };
 		2829226C253094AA00682396 /* MarketplaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829226B253094AA00682396 /* MarketplaceModel.swift */; };
 		282922762530958E00682396 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282922752530958E00682396 /* Controller.swift */; };
 		2829227B253096FA00682396 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829227A253096FA00682396 /* Layout.swift */; };
+		2829312C25310C080046F6B1 /* CarDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2829312B25310C080046F6B1 /* CarDetector.mlmodel */; };
 		2841B2AA25305ED500C5CD65 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2A925305ED500C5CD65 /* Camera.swift */; };
 		2841B2E82530650000C5CD65 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2E72530650000C5CD65 /* Coordinator.swift */; };
 		2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */; };
@@ -42,8 +46,8 @@
 		28EDC3912530E3C400F4A599 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3902530E3C400F4A599 /* Marketplace.swift */; };
 		28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3AD2530F7B300F4A599 /* CarCell.swift */; };
 		28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3B22530F7F800F4A599 /* BrandCell.swift */; };
-		40BE13EE253102E200FE7D8E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13ED253102E200FE7D8E /* UIColor+.swift */; };
-		40BE13F3253102F700FE7D8E /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F2253102F700FE7D8E /* UIFont+.swift */; };
+		40BE13EE253102E200FE7D8E /* UIColor+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13ED253102E200FE7D8E /* UIColor+StyleGuide.swift */; };
+		40BE13F3253102F700FE7D8E /* UIFont+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */; };
 		40BE13F82531033A00FE7D8E /* ColorStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */; };
 		40BE13FD2531034B00FE7D8E /* FontStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13FC2531034B00FE7D8E /* FontStyleGuide.swift */; };
 /* End PBXBuildFile section */
@@ -66,12 +70,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		28063ADF253074F9007F50C3 /* CarDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarDetector.mlmodel; sourceTree = "<group>"; };
+		280388D325317B8100843F70 /* SheetHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeader.swift; sourceTree = "<group>"; };
+		280388DF2531814D00843F70 /* UIImage+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+StyleGuide.swift"; sourceTree = "<group>"; };
+		280388EA2531817C00843F70 /* IconStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconStyleGuide.swift; sourceTree = "<group>"; };
+		28038CF025319CAA00843F70 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		28063AE525308D64007F50C3 /* MarketplaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceController.swift; sourceTree = "<group>"; };
 		28063AEC25308DC2007F50C3 /* MarketplaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceLayout.swift; sourceTree = "<group>"; };
 		2829226B253094AA00682396 /* MarketplaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceModel.swift; sourceTree = "<group>"; };
 		282922752530958E00682396 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		2829227A253096FA00682396 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		2829312B25310C080046F6B1 /* CarDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarDetector.mlmodel; sourceTree = "<group>"; };
 		2841B2A925305ED500C5CD65 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		2841B2E72530650000C5CD65 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -106,8 +114,8 @@
 		28EDC3902530E3C400F4A599 /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		28EDC3AD2530F7B300F4A599 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		28EDC3B22530F7F800F4A599 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
-		40BE13ED253102E200FE7D8E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		40BE13F2253102F700FE7D8E /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		40BE13ED253102E200FE7D8E /* UIColor+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+StyleGuide.swift"; sourceTree = "<group>"; };
+		40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+StyleGuide.swift"; sourceTree = "<group>"; };
 		40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyleGuide.swift; sourceTree = "<group>"; };
 		40BE13FC2531034B00FE7D8E /* FontStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,7 +236,7 @@
 		28D81C5A253035DE009AC62B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				28063ADF253074F9007F50C3 /* CarDetector.mlmodel */,
+				2829312B25310C080046F6B1 /* CarDetector.mlmodel */,
 				28D81C282530359A009AC62B /* LaunchScreen.storyboard */,
 				28D81C262530359A009AC62B /* Assets.xcassets */,
 			);
@@ -238,7 +246,7 @@
 		28D81C5E25303638009AC62B /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				40BE13E62531026600FE7D8E /* StyleGuide */,
+				40BE13E62531026600FE7D8E /* StyleGuides */,
 				40BE13E52531025B00FE7D8E /* Extentions */,
 				28D81C63253036FC009AC62B /* Base */,
 				2841B2E6253064F400C5CD65 /* Protocols */,
@@ -253,6 +261,7 @@
 				2841B2A925305ED500C5CD65 /* Camera.swift */,
 				28EDC3AD2530F7B300F4A599 /* CarCell.swift */,
 				28EDC3B22530F7F800F4A599 /* BrandCell.swift */,
+				280388D325317B8100843F70 /* SheetHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				2829226B253094AA00682396 /* MarketplaceModel.swift */,
+				28038CF025319CAA00843F70 /* CameraModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,19 +383,21 @@
 		40BE13E52531025B00FE7D8E /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				40BE13ED253102E200FE7D8E /* UIColor+.swift */,
-				40BE13F2253102F700FE7D8E /* UIFont+.swift */,
+				40BE13ED253102E200FE7D8E /* UIColor+StyleGuide.swift */,
+				40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */,
+				280388DF2531814D00843F70 /* UIImage+StyleGuide.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		40BE13E62531026600FE7D8E /* StyleGuide */ = {
+		40BE13E62531026600FE7D8E /* StyleGuides */ = {
 			isa = PBXGroup;
 			children = (
 				40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */,
 				40BE13FC2531034B00FE7D8E /* FontStyleGuide.swift */,
+				280388EA2531817C00843F70 /* IconStyleGuide.swift */,
 			);
-			path = StyleGuide;
+			path = StyleGuides;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +538,7 @@
 				28EDC3542530DF8500F4A599 /* CarType.swift in Sources */,
 				282922762530958E00682396 /* Controller.swift in Sources */,
 				2829226C253094AA00682396 /* MarketplaceModel.swift in Sources */,
+				280388EB2531817C00843F70 /* IconStyleGuide.swift in Sources */,
 				28EDC32C2530CFDF00F4A599 /* CarDetailsController.swift in Sources */,
 				2841B2E82530650000C5CD65 /* Coordinator.swift in Sources */,
 				40BE13FD2531034B00FE7D8E /* FontStyleGuide.swift in Sources */,
@@ -540,6 +553,8 @@
 				28C5236625309F5B00B8A7CA /* MarketplaceCoordinator.swift in Sources */,
 				28D81C9725303F23009AC62B /* Recognition.swift in Sources */,
 				28EDC30E2530B93900F4A599 /* CameraCoordinator.swift in Sources */,
+				2829312C25310C080046F6B1 /* CarDetector.mlmodel in Sources */,
+				280388E02531814D00843F70 /* UIImage+StyleGuide.swift in Sources */,
 				28EDC3782530E11D00F4A599 /* CarListRequest.swift in Sources */,
 				28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */,
 				28EDC3402530DC5F00F4A599 /* CarList.swift in Sources */,
@@ -547,15 +562,16 @@
 				2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */,
 				28EDC35D2530DFCF00F4A599 /* Brand.swift in Sources */,
 				28EDC34F2530DE0600F4A599 /* Car.swift in Sources */,
-				40BE13F3253102F700FE7D8E /* UIFont+.swift in Sources */,
+				40BE13F3253102F700FE7D8E /* UIFont+StyleGuide.swift in Sources */,
 				28D81C2025303598009AC62B /* SceneDelegate.swift in Sources */,
 				2841B2AA25305ED500C5CD65 /* Camera.swift in Sources */,
+				28038CF125319CAA00843F70 /* CameraModel.swift in Sources */,
+				280388D425317B8100843F70 /* SheetHeader.swift in Sources */,
 				28EDC3912530E3C400F4A599 /* Marketplace.swift in Sources */,
 				40BE13F82531033A00FE7D8E /* ColorStyleGuide.swift in Sources */,
 				28EDC34A2530DDB900F4A599 /* CarModel.swift in Sources */,
-				40BE13EE253102E200FE7D8E /* UIColor+.swift in Sources */,
+				40BE13EE253102E200FE7D8E /* UIColor+StyleGuide.swift in Sources */,
 				28D81CA32530416E009AC62B /* Service.swift in Sources */,
-				28063AE0253074F9007F50C3 /* CarDetector.mlmodel in Sources */,
 				28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
