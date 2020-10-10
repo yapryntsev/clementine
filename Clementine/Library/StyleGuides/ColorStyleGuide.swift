@@ -275,7 +275,7 @@ struct ColorStyleGuide {
         return UIColor(rgb: 0xFFEFD7)
     }
     
-    //MARK - CYAN
+    // MARK: - CYAN
     
     var cyan50: UIColor {
         return UIColor(rgb: 0x00AAFF)
@@ -297,7 +297,7 @@ struct ColorStyleGuide {
         return UIColor(rgb: 0xCCEEFF)
     }
     
-    //MARK - TIRQUOISE
+    // MARK: - TIRQUOISE
     
     var tirquoise50: UIColor {
         return UIColor(rgb: 0x4AD2CA)
@@ -319,7 +319,7 @@ struct ColorStyleGuide {
         return UIColor(rgb: 0xDBF6F4)
     }
     
-    //MARK - GREEN APPLE
+    // MARK: - GREEN APPLE
     
     var greenApple50: UIColor {
         return UIColor(rgb: 0x6ECF70)
@@ -341,7 +341,7 @@ struct ColorStyleGuide {
         return UIColor(rgb: 0xDFF5E2)
     }
     
-    //MARK - PURPLE
+    // MARK: - PURPLE
     
     var purple50: UIColor {
         return UIColor(rgb: 0xBF67C7)
@@ -363,7 +363,7 @@ struct ColorStyleGuide {
         return UIColor(rgb: 0xF2E1F4)
     }
     
-    //MARK - PINK
+    // MARK: - PINK
     
     var pink50: UIColor {
         return UIColor(rgb: 0xFF4667)
