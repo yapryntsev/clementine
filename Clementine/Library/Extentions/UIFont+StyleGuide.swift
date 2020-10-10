@@ -9,7 +9,7 @@ import UIKit
    
 extension UIFont {
     
-    var fontStyleGuide: FontStyleGiude {
+    static var styleGuide: FontStyleGiude {
         return FontStyleGiude()
     }
 }
