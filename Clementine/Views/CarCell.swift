@@ -12,15 +12,42 @@ final class CarCell: UICollectionViewCell {
     static let reuseIdentifier = "CarCell"
 
     private lazy var imageView: UIImageView = {
-        let rawImageView = UIImageView()
-        rawImageView.translatesAutoresizingMaskIntoConstraints = false
-        return rawImageView
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        // Need fix
+        imageView.transform = CGAffineTransform(translationX: 48, y: 0)
+            .scaledBy(x: 1.2, y: 1.2)
+        return imageView
     }()
 
-    private lazy var imageViewss: UIImageView = {
-        let rawImageView = UIImageView()
-        rawImageView.translatesAutoresizingMaskIntoConstraints = false
-        return rawImageView
+    private lazy var titleLabel: UILabel = {
+
+        let label = UILabel()
+
+        label.font = UIFont.styleGuide.body1
+        label.textColor = UIColor.styleGuide.grey90
+
+        return label
+    }()
+
+    private lazy var subtitleLabel: UILabel = {
+
+        let label = UILabel()
+
+        label.font = UIFont.styleGuide.title4
+        label.textColor = UIColor.styleGuide.blue60
+
+        return label
+    }()
+
+    private lazy var metaLabel: UILabel = {
+
+        let label = UILabel()
+
+        label.font = UIFont.styleGuide.body1
+        label.textColor = UIColor.styleGuide.coldGrey40
+
+        return label
     }()
 
     override init(frame: CGRect) {
@@ -34,25 +61,41 @@ final class CarCell: UICollectionViewCell {
 
     private func configurate() {
 
-        backgroundColor = .red
-        imageView.backgroundColor = .blue
-        imageViewss.backgroundColor = .green
+        contentView.clipsToBounds = true
+
+        titleLabel.text = "БМВ 2 серии"
+        subtitleLabel.text = "От 94 328,50 ₽ в мес."
+        metaLabel.text = "Купе · Легковые"
+        imageView.image = UIImage(named: "test")
+
+        let titleWrapper = UIStackView(arrangedSubviews: [
+            titleLabel, metaLabel
+        ])
+        titleWrapper.spacing = 8
+
+        let textWrapper = UIStackView(arrangedSubviews: [
+            titleWrapper, subtitleLabel
+        ])
+        textWrapper.axis = .vertical
+        textWrapper.alignment = .leading
+        textWrapper.spacing = 4
 
         let wrapper = UIStackView(arrangedSubviews: [
-            imageViewss, imageView
+            textWrapper, imageView
         ])
+        wrapper.alignment = .center
         wrapper.translatesAutoresizingMaskIntoConstraints = false
 
-        addSubview(wrapper)
+        contentView.addSubview(wrapper)
         addConstraints([
             wrapper.topAnchor.constraint(
-                equalTo: topAnchor, constant: 12),
+                equalTo: contentView.topAnchor),
             wrapper.bottomAnchor.constraint(
-                equalTo: bottomAnchor, constant: -12),
+                equalTo: contentView.bottomAnchor),
             wrapper.leadingAnchor.constraint(
-                equalTo: leadingAnchor),
+                equalTo: contentView.leadingAnchor, constant: 16),
             wrapper.trailingAnchor.constraint(
-                equalTo: trailingAnchor),
+                equalTo: contentView.trailingAnchor),
 
             imageView.widthAnchor.constraint(
                 equalTo: imageView.heightAnchor, multiplier: 1.25)
