@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Combine
 
-@objc
 protocol Coordinator {
 
-    weak var navigation: UINavigationController? { get set }
+    var navigation: UINavigationController? { get set }
     var child: Coordinator? { get set }
+    var subscribers: Set<AnyCancellable> { get set }
 
     func start()
 }
