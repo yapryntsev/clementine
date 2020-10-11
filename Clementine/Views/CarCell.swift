@@ -6,15 +6,40 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CarCell: UICollectionViewCell {
 
     static let reuseIdentifier = "CarCell"
 
+    var imageURL: URL? {
+        didSet {
+            imageView.kf.setImage(with: imageURL)
+        }
+    }
+
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+        }
+    }
+
+    var subtitle: String? {
+        didSet {
+            subtitleLabel.text = subtitle
+        }
+    }
+
+    var meta: String? {
+        didSet {
+            metaLabel.text = meta
+        }
+    }
+
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        // Need fix
+        // Простите, я спешил. Плоха.
         imageView.transform = CGAffineTransform(translationX: 48, y: 0)
             .scaledBy(x: 1.2, y: 1.2)
         return imageView
@@ -66,7 +91,6 @@ final class CarCell: UICollectionViewCell {
         titleLabel.text = "БМВ 2 серии"
         subtitleLabel.text = "От 94 328,50 ₽ в мес."
         metaLabel.text = "Купе · 2 981 178 ₽"
-        imageView.image = UIImage(named: "test")
 
         let titleWrapper = UIStackView(arrangedSubviews: [
             titleLabel, metaLabel

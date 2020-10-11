@@ -14,20 +14,8 @@ final class ApplyLoan: UICollectionReusableView {
 
     var action: (() -> Void)?
 
-    var leadingText: String? {
-        didSet {
-            button.leadingText = leadingText
-        }
-    }
-
-    var trailingText: String? {
-        didSet {
-            button.trailingText = trailingText
-        }
-    }
-
-    private lazy var button: DoubleTextBlueButton = {
-        return DoubleTextBlueButton()
+    private lazy var button: BlueButton = {
+        return BlueButton()
     }()
 
     override init(frame: CGRect) {
@@ -41,7 +29,7 @@ final class ApplyLoan: UICollectionReusableView {
 
     private func configurate() {
 
-        button.trailingText = "Подать заявку"
+        button.setTitle("Подать заявку", for: .normal)
 
         button.layer.shadowColor = UIColor.styleGuide.grey90.cgColor
         button.layer.shadowOpacity = 0.32
