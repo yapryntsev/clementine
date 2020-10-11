@@ -42,7 +42,7 @@ final class CarDetailsModel: NSObject {
             fatalError()
         }
 
-        cell.url = car.body.photo
+        cell.url = car.photo
     }
 
     private func setupBaseInfo(for cell: UICollectionViewCell) {
@@ -162,18 +162,11 @@ extension CarDetailsModel: UICollectionViewDataSource {
     ) -> UICollectionReusableView {
 
         if kind == "footer" {
-            let cell = collectionView.dequeueReusableSupplementaryView(
+            return collectionView.dequeueReusableSupplementaryView(
                 ofKind: ApplyLoan.kind,
                 withReuseIdentifier: ApplyLoan.reuseIdentifier,
                 for: indexPath
-            ) as! ApplyLoan
-            let price = formatter.string(from: NSNumber(value: car.minPrice)) ?? ""
-            cell.leadingText = "Кредит до \(price)"
-            cell.trailingText = "Подать заявку"
-            cell.action = { [weak self] in
-                self?.output?()
-            }
-            return cell
+            )
         }
 
         let cell = collectionView.dequeueReusableSupplementaryView(

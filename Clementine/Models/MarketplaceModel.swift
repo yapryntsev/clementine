@@ -9,8 +9,21 @@ import UIKit
 
 final class MarketplaceModel: NSObject {
 
+    let cars: [Car]
+
+    private lazy var formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.groupingSize = 3
+        formatter.usesGroupingSeparator = true
+        return formatter
+    }()
+
+    init(cars: [Car]) {
+        self.cars = cars
+    }
+
     enum Sections: Int, CaseIterable {
-        case service
         case list
     }
 
@@ -33,10 +46,8 @@ extension MarketplaceModel: UICollectionViewDataSource {
         }
 
         switch section {
-        case .service:
-            return 1
         case .list:
-            return 100
+            return cars.count
         }
     }
 
@@ -45,21 +56,16 @@ extension MarketplaceModel: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
 
-        guard let section = Sections(rawValue: indexPath.section) else {
-            fatalError("")
-        }
-
-        let reuseIdentifier: String
-
-        switch section {
-        case .service:
-            reuseIdentifier = BrandCell.reuseIdentifier
-        case .list:
-            reuseIdentifier = CarCell.reuseIdentifier
-        }
-
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier, for: indexPath)
+            withReuseIdentifier: CarCell.reuseIdentifier, for: indexPath) as! CarCell
+
+        let model = cars[indexPath.row]
+
+        cell.imageURL = model.photo
+        cell.title = model.titleRus
+        let price = formatter.string(from: NSNumber(value: model.minPrice)) ?? ""
+        cell.subtitle = "\(price) ₽"
+        cell.meta = model.body.typeTitle
 
         return cell
     }

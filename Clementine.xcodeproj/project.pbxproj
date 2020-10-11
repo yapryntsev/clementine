@@ -20,7 +20,7 @@
 		2841B2AA25305ED500C5CD65 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2A925305ED500C5CD65 /* Camera.swift */; };
 		2841B2E82530650000C5CD65 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2E72530650000C5CD65 /* Coordinator.swift */; };
 		2841B2F12530656F00C5CD65 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */; };
-		284A3E9825324512007A0E99 /* DoubleTextBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A3E9725324512007A0E99 /* DoubleTextBlueButton.swift */; };
+		284A3E9825324512007A0E99 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A3E9725324512007A0E99 /* BlueButton.swift */; };
 		284A3E9D25324A20007A0E99 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A3E9C25324A20007A0E99 /* GalleryItem.swift */; };
 		284A3EA225324F63007A0E99 /* CarBaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A3EA125324F63007A0E99 /* CarBaseInfo.swift */; };
 		284A3EAA25329AC3007A0E99 /* CarMetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A3EA925329AC3007A0E99 /* CarMetaItem.swift */; };
@@ -47,7 +47,6 @@
 		28D81CA32530416E009AC62B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81CA22530416E009AC62B /* Service.swift */; };
 		28EDC30E2530B93900F4A599 /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC30D2530B93900F4A599 /* CameraCoordinator.swift */; };
 		28EDC32C2530CFDF00F4A599 /* CarDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC32B2530CFDF00F4A599 /* CarDetailsController.swift */; };
-		28EDC3402530DC5F00F4A599 /* CarsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC33F2530DC5F00F4A599 /* CarsRequest.swift */; };
 		28EDC3452530DC7E00F4A599 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3442530DC7E00F4A599 /* Country.swift */; };
 		28EDC34A2530DDB900F4A599 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3492530DDB900F4A599 /* CarModel.swift */; };
 		28EDC34F2530DE0600F4A599 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC34E2530DE0600F4A599 /* Car.swift */; };
@@ -58,7 +57,6 @@
 		28EDC3782530E11D00F4A599 /* AllCarsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3772530E11D00F4A599 /* AllCarsRequest.swift */; };
 		28EDC3912530E3C400F4A599 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3902530E3C400F4A599 /* Marketplace.swift */; };
 		28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3AD2530F7B300F4A599 /* CarCell.swift */; };
-		28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDC3B22530F7F800F4A599 /* BrandCell.swift */; };
 		40BE13EE253102E200FE7D8E /* UIColor+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13ED253102E200FE7D8E /* UIColor+StyleGuide.swift */; };
 		40BE13F3253102F700FE7D8E /* UIFont+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */; };
 		40BE13F82531033A00FE7D8E /* ColorStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */; };
@@ -96,7 +94,7 @@
 		2841B2A925305ED500C5CD65 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		2841B2E72530650000C5CD65 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2841B2F02530656F00C5CD65 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		284A3E9725324512007A0E99 /* DoubleTextBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTextBlueButton.swift; sourceTree = "<group>"; };
+		284A3E9725324512007A0E99 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		284A3E9C25324A20007A0E99 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		284A3EA125324F63007A0E99 /* CarBaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBaseInfo.swift; sourceTree = "<group>"; };
 		284A3EA925329AC3007A0E99 /* CarMetaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMetaItem.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		28D81CA22530416E009AC62B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		28EDC30D2530B93900F4A599 /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
 		28EDC32B2530CFDF00F4A599 /* CarDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsController.swift; sourceTree = "<group>"; };
-		28EDC33F2530DC5F00F4A599 /* CarsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsRequest.swift; sourceTree = "<group>"; };
 		28EDC3442530DC7E00F4A599 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		28EDC3492530DDB900F4A599 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		28EDC34E2530DE0600F4A599 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 		28EDC3772530E11D00F4A599 /* AllCarsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCarsRequest.swift; sourceTree = "<group>"; };
 		28EDC3902530E3C400F4A599 /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		28EDC3AD2530F7B300F4A599 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
-		28EDC3B22530F7F800F4A599 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		40BE13ED253102E200FE7D8E /* UIColor+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+StyleGuide.swift"; sourceTree = "<group>"; };
 		40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+StyleGuide.swift"; sourceTree = "<group>"; };
 		40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyleGuide.swift; sourceTree = "<group>"; };
@@ -288,10 +284,9 @@
 			children = (
 				2841B2A925305ED500C5CD65 /* Camera.swift */,
 				28EDC3AD2530F7B300F4A599 /* CarCell.swift */,
-				28EDC3B22530F7F800F4A599 /* BrandCell.swift */,
 				287A95E12532444500602EDA /* ApplyLoan.swift */,
 				280388D325317B8100843F70 /* SheetHeader.swift */,
-				284A3E9725324512007A0E99 /* DoubleTextBlueButton.swift */,
+				284A3E9725324512007A0E99 /* BlueButton.swift */,
 				284A3E9C25324A20007A0E99 /* GalleryItem.swift */,
 				284A3EA125324F63007A0E99 /* CarBaseInfo.swift */,
 				284A3EA925329AC3007A0E99 /* CarMetaItem.swift */,
@@ -400,7 +395,6 @@
 				28EDC35C2530DFCF00F4A599 /* Brand.swift */,
 				28EDC3442530DC7E00F4A599 /* Country.swift */,
 				28EDC3682530E07100F4A599 /* Photo.swift */,
-				28EDC33F2530DC5F00F4A599 /* CarsRequest.swift */,
 				28EDC34E2530DE0600F4A599 /* Car.swift */,
 				284A3EC92532BA77007A0E99 /* RawCar.swift */,
 				28EDC3492530DDB900F4A599 /* CarModel.swift */,
@@ -588,7 +582,7 @@
 				28063AE625308D64007F50C3 /* MarketplaceController.swift in Sources */,
 				28C5236625309F5B00B8A7CA /* MarketplaceCoordinator.swift in Sources */,
 				284A3EAA25329AC3007A0E99 /* CarMetaItem.swift in Sources */,
-				284A3E9825324512007A0E99 /* DoubleTextBlueButton.swift in Sources */,
+				284A3E9825324512007A0E99 /* BlueButton.swift in Sources */,
 				284A3E9D25324A20007A0E99 /* GalleryItem.swift in Sources */,
 				28EDC30E2530B93900F4A599 /* CameraCoordinator.swift in Sources */,
 				2829312C25310C080046F6B1 /* CarDetector.mlmodel in Sources */,
@@ -596,7 +590,6 @@
 				280388E02531814D00843F70 /* UIImage+StyleGuide.swift in Sources */,
 				28EDC3782530E11D00F4A599 /* AllCarsRequest.swift in Sources */,
 				28EDC3AE2530F7B300F4A599 /* CarCell.swift in Sources */,
-				28EDC3402530DC5F00F4A599 /* CarsRequest.swift in Sources */,
 				287A95DD2532439300602EDA /* CarDetailsLayout.swift in Sources */,
 				28D81C1E25303598009AC62B /* AppDelegate.swift in Sources */,
 				284A3EB025329FA2007A0E99 /* SimilarWidgetItem.swift in Sources */,
@@ -616,7 +609,6 @@
 				28EDC34A2530DDB900F4A599 /* CarModel.swift in Sources */,
 				40BE13EE253102E200FE7D8E /* UIColor+StyleGuide.swift in Sources */,
 				28D81CA32530416E009AC62B /* Service.swift in Sources */,
-				28EDC3B32530F7F800F4A599 /* BrandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +779,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WHHNC99NP;
 				INFOPLIST_FILE = Clementine/Application/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -807,7 +799,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WHHNC99NP;
 				INFOPLIST_FILE = Clementine/Application/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
