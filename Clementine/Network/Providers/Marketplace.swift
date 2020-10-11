@@ -11,7 +11,7 @@ import Combine
 
 struct Marketplace {
 
-    let service = Service(uuid: UUID().uuidString, sessionId: "salam")
+    let service = Service(uuid: UUID().uuidString)
 
     enum MarketplaceErorr: Error {
         case canNotProvideDataFromImage
@@ -21,16 +21,16 @@ struct Marketplace {
 extension Marketplace {
 
     // Список всех машин, доступных на маркетплейсе
-    var cars: AnyPublisher<[CarsRequest], Service.Error> {
+    var cars: AnyPublisher<[Car], Service.Error> {
         let request = AllCarsRequest()
         return request.schedule(with: service)
             .eraseToAnyPublisher()
     }
 
     // Список всех машин, похожих на машину на фото
-    func cars(similar image: UIImage) -> AnyPublisher<CarsRequest, Service.Error> {
+    func cars(similar image: UIImage) -> AnyPublisher<[Car], Service.Error> {
 
-        guard let data = image.jpegData(compressionQuality: 0.25) else {
+        guard let data = image.jpegData(compressionQuality: 0.65) else {
             fatalError("Can't produce Data from UIImage")
         }
 
@@ -42,7 +42,7 @@ extension Marketplace {
     }
 
     // Список всех машин конкретного бренда
-    func cars(for brand: Brand) throws -> AnyPublisher<CarsRequest, Service.Error> {
+    func cars(for brand: Brand) throws -> AnyPublisher<[Car], Service.Error> {
         let request = BrandCarsRequest(brand: brand)
         return request.schedule(with: service)
             .eraseToAnyPublisher()
