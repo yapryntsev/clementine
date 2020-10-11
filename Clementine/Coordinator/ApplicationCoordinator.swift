@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 
-final class ApplicationCoordinator {
+final class ApplicationCoordinator: Coordinator {
 
-    private weak var navigation: UINavigationController?
-    private var child: Coordinator?
+    weak var navigation: UINavigationController?
+    var subscribers = Set<AnyCancellable>()
+    var child: Coordinator?
 
     init(navigation: UINavigationController?) {
         self.navigation = navigation
@@ -21,9 +23,7 @@ final class ApplicationCoordinator {
     }
 
     private func startCameraCoordinator() {
-        
         let coordinator = CameraCoordinator(navigation: navigation)
-
         coordinator.start()
         child = coordinator
     }

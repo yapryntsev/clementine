@@ -13,17 +13,20 @@ import Vision
 
 class CameraController: Controller {
 
+    var shouldProduseOutput = true
+
     // MARK: - Output
-    @Published var output: UIImage?
+    let output = PassthroughSubject<CarsRequest, Never>()
 
-    // MARK: - Queue for working with the session
-    private let sessionQueue = DispatchQueue(
-        label: "ru.clementine.av-session", qos: .userInitiated)
-
+    // MARK: - ML Model
     private let model: VNCoreMLModel
 
     // MARK: - View Model
     private let viewModel: CameraModel
+
+    // MARK: - Queue for working with the session
+    private let sessionQueue = DispatchQueue(
+        label: "ru.clementine.av-session", qos: .userInitiated)
 
     // MARK: - Main session for module
     private let session: AVCaptureSession
@@ -40,22 +43,29 @@ class CameraController: Controller {
         return view
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-
     // MARK: - Init
-    init(session: AVCaptureSession, mlModel: VNCoreMLModel, viewModel: CameraModel) {
+    init(session: AVCaptureSession, model: VNCoreMLModel, viewModel: CameraModel) {
 
         self.session = session
         self.viewModel = viewModel
-        model = mlModel
+        self.model = model
 
         super.init()
 
         sessionQueue.async { [unowned self] in
             self.configurate(session: session)
         }
+
+        viewModel.output
+            .sink { [unowned self] result in
+                switch result {
+                case .success(let cars):
+                    self.output.send(cars)
+                case .failure(_):
+                    break
+                }
+            }
+            .store(in: &subscribers)
     }
 
     required init?(coder: NSCoder) {
@@ -70,13 +80,19 @@ class CameraController: Controller {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        shouldProduseOutput = true
         sessionQueue.async { [unowned self] in
             self.session.startRunning()
         }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        shouldProduseOutput = false
         sessionQueue.async { [unowned self] in
             self.session.stopRunning()
         }
@@ -143,13 +159,16 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
             let rect = CGRect(x: x, y: y, width: width, height: height)
 
             let croppedImage = ciImage.cropped(to: rect)
-
-            let image = UIImage(ciImage: croppedImage)
-
-            self?.output = UIImage(ciImage: ciImage)
+            if self?.shouldProduseOutput ?? false {
+                self?.viewModel.input.send(UIImage(ciImage: croppedImage))
+                self?.shouldProduseOutput = false
+            }
         }
 
         try? VNImageRequestHandler(
-            cvPixelBuffer: buffer, orientation: .right, options: [:]).perform([mlRequest])
+            cvPixelBuffer: buffer,
+            orientation: .right,
+            options: [:]
+        ).perform([mlRequest])
     }
 }
