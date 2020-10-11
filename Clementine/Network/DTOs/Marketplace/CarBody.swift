@@ -1,5 +1,5 @@
 //
-//  BodyType.swift
+//  CarBody.swift
 //  Clementine
 //
 //  Created by YAPRYNTSEV Aleksey on 09.10.2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BodyType: Codable {
+struct CarBody: Codable {
 
     let alias: String
     let doors: Int

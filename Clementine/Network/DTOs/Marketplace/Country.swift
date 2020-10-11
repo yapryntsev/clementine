@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Объект, описывающий страну производителя
 struct Country: Codable {
 
     let id: Int

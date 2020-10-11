@@ -1,14 +1,13 @@
 //
-//  Car.swift
+//  RawCar.swift
 //  Clementine
 //
-//  Created by YAPRYNTSEV Aleksey on 09.10.2020.
+//  Created by YAPRYNTSEV Aleksey on 11.10.2020.
 //
 
 import Foundation
 
-// Объект, описывающий конкретное авто
-struct Car: Codable {
+struct RawCar: Codable {
 
     let title: String
     let titleRus: String
@@ -20,7 +19,7 @@ struct Car: Codable {
     let alias: String
     let prefix: String
 
-    let body: CarBody
+    let bodies: [CarBody]
 
     let brand: Brand
 

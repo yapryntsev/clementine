@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Объект, описывающий бренд авто
 struct Brand: Codable {
 
     let id: Int
