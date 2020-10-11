@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 import Vision
 import AVFoundation
 
-final class CameraCoordinator: Coordinator {
+final class CameraCoordinator: NSObject, Coordinator {
 
     weak var navigation: UINavigationController?
+    var subscribers = Set<AnyCancellable>()
     var child: Coordinator?
 
     init(navigation: UINavigationController?) {
@@ -20,35 +22,32 @@ final class CameraCoordinator: Coordinator {
 
     func start() {
         showCameraScreen()
+        startMarketplaceCoordinator(with: nil)
     }
 
     private func showCameraScreen() {
 
         let session = AVCaptureSession()
-        guard let mlModel = try? VNCoreMLModel(for: CarDetector().model) else {
+        guard let model = try? VNCoreMLModel(for: CarDetector().model) else {
             fatalError("Can't get ml model instance")
         }
         let viewModel = CameraModel()
         let controller = CameraController(
-            session: session, mlModel: mlModel, viewModel: viewModel)
+            session: session, model: model, viewModel: viewModel)
 
-        viewModel.view = controller
-        viewModel.output = { [weak self] brand in
-            self?.startMarketplaceCoordinator(for: brand)
+        controller.output.sink { [unowned self] result in
+            self.startMarketplaceCoordinator(with: result)
         }
+        .store(in: &subscribers)
 
-        navigation?.show(controller, sender: self)
+        navigation?.setViewControllers([controller], animated: false)
     }
 
-    private func startMarketplaceCoordinator(for brand: Brand?) {
+    private func startMarketplaceCoordinator(with result: CarsRequest?) {
 
-        let nestedNavigation = UINavigationController()
-        nestedNavigation.setNavigationBarHidden(true, animated: false)
-        let coordinator = MarketplaceCoordinator(navigation: nestedNavigation)
+        let coordinator = MarketplaceCoordinator(navigation: navigation)
 
         coordinator.start()
         child = coordinator
-
-        navigation?.present(nestedNavigation, animated: true)
     }
 }
