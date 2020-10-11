@@ -65,7 +65,7 @@ final class CarCell: UICollectionViewCell {
 
         titleLabel.text = "БМВ 2 серии"
         subtitleLabel.text = "От 94 328,50 ₽ в мес."
-        metaLabel.text = "Купе · Легковые"
+        metaLabel.text = "Купе · 2 981 178 ₽"
         imageView.image = UIImage(named: "test")
 
         let titleWrapper = UIStackView(arrangedSubviews: [

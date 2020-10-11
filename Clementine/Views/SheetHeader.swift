@@ -50,6 +50,7 @@ final class SheetHeader: UICollectionReusableView {
 
     private func configurate() {
 
+        backgroundColor = .white
         label.text = "Маркетплейс"
 
         let wrapper = UIStackView(arrangedSubviews: [
