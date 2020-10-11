@@ -39,8 +39,6 @@ final class MarketplaceLayout: Layout {
             let sectionDescriptor: NSCollectionLayoutSection?
 
             switch section {
-            case .service:
-                sectionDescriptor = self?.serviceBanner()
             case .list:
                 sectionDescriptor = self?.carList()
             }
