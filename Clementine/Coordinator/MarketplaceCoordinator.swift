@@ -27,53 +27,37 @@ final class MarketplaceCoordinator: NSObject, Coordinator {
     }
 
     func start() {
-        showMarketeplaceList()
+        showMarketeplaceList(with: [])
         navigation?.present(nestedNavigation, animated: true)
     }
 
-    private func showMarketeplaceList() {
+    func start(delegate: UIAdaptivePresentationControllerDelegate, cars: [Car]) {
+        nestedNavigation.presentationController?.delegate = delegate
+        showMarketeplaceList(with: cars)
+        navigation?.present(nestedNavigation, animated: true)
+    }
+
+    private func showMarketeplaceList(with cars: [Car]) {
         
-        let model = MarketplaceModel()
+        let model = MarketplaceModel(cars: cars)
         let controller = MarketplaceController(model: model)
 
         model.view = controller
         
         controller.output = { [unowned self] in
-            self.showCarDetailsScreen()
+            self.showCarDetailsScreen(car: $0)
         }
         
         nestedNavigation.setViewControllers([controller], animated: false)
     }
 
-    private func showCarDetailsScreen() {
-
-        let car = Car(
-            title: "Granta",
-            titleRus: "Гранта",
-            id: 9663,
-            carId: 323,
-            absentee: true,
-            alias: "granta",
-            prefix: "",
-            body: CarBody(alias: "", doors: 5, photo: URL(string: "https://tradeins.space/uploads/photo/511795/hetch.png")!, title: "", type: "", typeTitle: "Хэтчбек"),
-            brand: Brand(id: 83, absentee: true, alias: "LADA", country: Country(id: 14, code: "RU", title: "Россия"), isOutbound: false, logo: URL(string: "http://test.ru")!, title: "lada", titleRus: "Лада"),
-            colorsCount: 4,
-            count: 5,
-            hasSpecialPrice: true,
-            metallicPay: 0,
-            minPrice: 470900,
-            model: CarModel(id: 2441, absentee: true, alias: "granta", prefix: "", title: "Granta", titleRus: "Гранта"),
-            ownTitle: "I Рестайлинг",
-            pearlPay: 32,
-            premiumPriceSpecials: [],
-            transportType: CarType(id: 34, alias: "cars", title: "Легковые")
-        )
+    private func showCarDetailsScreen(car: Car) {
 
         let viewModel = CarDetailsModel(car: car)
         let controller = CarDetailsController(viewModel: viewModel)
 
         viewModel.output = {
-            print("Salam")
+            // Show loan coordinator
         }
 
         nestedNavigation.pushViewController(controller, animated: true)
