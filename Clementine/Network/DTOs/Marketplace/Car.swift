@@ -14,7 +14,9 @@ struct Car: Codable {
     let titleRus: String
 
     let id: Int
-    let carId: Int
+    let carId: String
+
+    let photo: URL
 
     let absentee: Bool
     let alias: String

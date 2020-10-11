@@ -10,7 +10,7 @@ import Squid
 
 struct BrandCarsRequest: JsonRequest {
 
-    typealias Result = CarsRequest
+    typealias Result = [Car]
 
     let brand: Brand
 

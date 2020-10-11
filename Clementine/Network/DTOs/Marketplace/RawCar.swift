@@ -7,18 +7,20 @@
 
 import Foundation
 
+// Плохое решение, но времени нет
 struct RawCar: Codable {
 
     let title: String
     let titleRus: String
 
     let id: Int
-    let carId: Int
+    let carId: String
 
     let absentee: Bool
     let alias: String
     let prefix: String
 
+    let photo: URL
     let bodies: [CarBody]
 
     let brand: Brand

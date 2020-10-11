@@ -10,7 +10,7 @@ import Squid
 
 struct AllCarsRequest: JsonRequest {
     
-    typealias Result = [CarsRequest]
+    typealias Result = [Car]
 
     var routes: HttpRoute {
         ["v1", "cars"]
