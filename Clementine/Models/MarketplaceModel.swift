@@ -71,8 +71,11 @@ extension MarketplaceModel: UICollectionViewDataSource {
     ) -> UICollectionReusableView {
 
         let cell = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind, withReuseIdentifier: "SheetHeader", for: indexPath)
-        
+            ofKind: SheetHeader.kind,
+            withReuseIdentifier: SheetHeader.reuseIdentifier,
+            for: indexPath
+        )
+
         return cell
     }
 }

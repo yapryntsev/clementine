@@ -8,36 +8,36 @@
 import UIKit
 import Combine
 
-final class CameraModel: NSObject {
+final class CameraModel {
 
-    private var shouldProduceOutputFromView = true
+    enum CameraModelError: Error {
+        case canNotFindMathes
+    }
+
+    private let provider = Marketplace()
+
+    // MARK: - Input
+    var input = PassthroughSubject<UIImage, Never>()
 
     // MARK: - Output
-    var output: ((Brand?) -> Void)?
+    var output = PassthroughSubject<Result<CarsRequest, CameraModelError>, Never>()
 
-    // MARK: - View
-    weak var view: CameraController? {
-        didSet {
-            setupReceiving()
-        }
+    init() {
+
+        input
+            .compactMap { $0 }
+            .map { self.provider.cars(similar: $0) }
+            .switchToLatest()
+            .sink(receiveCompletion: { [unowned self] completion in
+                if case .failure(_) = completion {
+                    self.output.send(.failure(.canNotFindMathes))
+                }
+            }, receiveValue: { [unowned self] result in
+                self.output.send(.success(result))
+            })
+            .store(in: &subscribers)
     }
 
     // MARK: - Subscribers
     private var subscribers = Set<AnyCancellable>()
-
-    private func setupReceiving() {
-
-        view?.$output
-            .receive(on: RunLoop.main)
-            .compactMap { $0 }
-            .filter { [unowned self] _ in
-                self.shouldProduceOutputFromView
-            }
-            .sink(receiveValue: { [unowned self] observation in
-                print(observation)
-                self.output?(nil)
-                self.shouldProduceOutputFromView = false
-            })
-            .store(in: &subscribers)
-    }
 }
