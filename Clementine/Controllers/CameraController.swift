@@ -13,10 +13,10 @@ import Vision
 
 class CameraController: Controller {
 
-    var shouldProduseOutput = true
+    var shouldProduceOutput = true
 
     // MARK: - Output
-    let output = PassthroughSubject<CarsRequest, Never>()
+    let output = PassthroughSubject<[Car], Never>()
 
     // MARK: - ML Model
     private let model: VNCoreMLModel
@@ -84,7 +84,6 @@ class CameraController: Controller {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        shouldProduseOutput = true
         sessionQueue.async { [unowned self] in
             self.session.startRunning()
         }
@@ -92,7 +91,6 @@ class CameraController: Controller {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        shouldProduseOutput = false
         sessionQueue.async { [unowned self] in
             self.session.stopRunning()
         }
@@ -152,16 +150,15 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
             let bounding = observation.boundingBox
 
-            let x = bounding.origin.x * ciImage.extent.size.width
-            let width = bounding.width * ciImage.extent.size.width
-            let height = bounding.height * ciImage.extent.size.height
-            let y = ciImage.extent.size.height * (1 - bounding.origin.y) - height
+            let x = bounding.origin.x * ciImage.extent.size.width - 128
+            let width = bounding.width * ciImage.extent.size.width + 256
+            let height = bounding.height * ciImage.extent.size.height + 256
+            let y = ciImage.extent.size.height * (1 - bounding.origin.y) - height - 128
             let rect = CGRect(x: x, y: y, width: width, height: height)
-
+            
             let croppedImage = ciImage.cropped(to: rect)
-            if self?.shouldProduseOutput ?? false {
+            if self?.shouldProduceOutput ?? false {
                 self?.viewModel.input.send(UIImage(ciImage: croppedImage))
-                self?.shouldProduseOutput = false
             }
         }
 

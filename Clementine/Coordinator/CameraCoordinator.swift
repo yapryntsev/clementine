@@ -15,6 +15,7 @@ final class CameraCoordinator: NSObject, Coordinator {
     weak var navigation: UINavigationController?
     var subscribers = Set<AnyCancellable>()
     var child: Coordinator?
+    weak var rootController: CameraController?
 
     init(navigation: UINavigationController?) {
         self.navigation = navigation
@@ -22,7 +23,6 @@ final class CameraCoordinator: NSObject, Coordinator {
 
     func start() {
         showCameraScreen()
-        startMarketplaceCoordinator(with: nil)
     }
 
     private func showCameraScreen() {
@@ -41,13 +41,22 @@ final class CameraCoordinator: NSObject, Coordinator {
         .store(in: &subscribers)
 
         navigation?.setViewControllers([controller], animated: false)
+        rootController = controller
     }
 
-    private func startMarketplaceCoordinator(with result: CarsRequest?) {
+    private func startMarketplaceCoordinator(with cars: [Car]) {
 
+        rootController?.shouldProduceOutput = false
         let coordinator = MarketplaceCoordinator(navigation: navigation)
-
-        coordinator.start()
+        coordinator.start(delegate: self, cars: cars)
         child = coordinator
+    }
+}
+
+extension CameraCoordinator: UIAdaptivePresentationControllerDelegate {
+
+    func presentationControllerDidDismiss(
+        _ presentationController: UIPresentationController) {
+        rootController?.shouldProduceOutput = true
     }
 }

@@ -10,11 +10,9 @@ import UIKit
 final class MarketplaceController: Controller {
 
     // MARK: - Output
-    var output: (() -> Void)?
+    var output: ((Car) -> Void)?
 
-    private lazy var layout: Layout = {
-        MarketplaceLayout()
-    }()
+    private lazy var layout: Layout = MarketplaceLayout()
 
     private lazy var collection: UICollectionView = {
         UICollectionView(frame: view.bounds, collectionViewLayout: layout.create())
@@ -38,6 +36,7 @@ final class MarketplaceController: Controller {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Triggered layoutSubviews, need fix.
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
@@ -49,8 +48,6 @@ final class MarketplaceController: Controller {
         view.addSubview(collection)
         collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 
-        collection.register(
-            BrandCell.self, forCellWithReuseIdentifier: BrandCell.reuseIdentifier)
         collection.register(
             CarCell.self, forCellWithReuseIdentifier: CarCell.reuseIdentifier)
         collection.register(
@@ -69,6 +66,10 @@ extension MarketplaceController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        output?()
+
+        if case .list = MarketplaceModel.Sections(rawValue: indexPath.section) {
+            let car = model.cars[indexPath.row]
+            output?(car)
+        }
     }
 }
