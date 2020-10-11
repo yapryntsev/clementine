@@ -14,13 +14,20 @@ final class MarketplaceLayout: Layout {
     func create() -> UICollectionViewLayout {
 
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(80)
+        )
+
         let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize, elementKind: "header", alignment: .top)
+            layoutSize: headerSize,
+            elementKind: "header",
+            alignment: .top
+        )
+        header.pinToVisibleBounds = true
 
         let configuration = UICollectionViewCompositionalLayoutConfiguration()
-        configuration.boundarySupplementaryItems = [header]
         configuration.interSectionSpacing = 24
+        configuration.boundarySupplementaryItems = [header]
 
         return UICollectionViewCompositionalLayout(sectionProvider: {
             [weak self] (index, environment) -> NSCollectionLayoutSection? in
