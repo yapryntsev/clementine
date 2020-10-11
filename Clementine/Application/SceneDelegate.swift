@@ -20,10 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let navigation = UINavigationController()
-        let rawWindow = UIWindow(frame: UIScreen.main.bounds)
-
-        // Configurate root navigation controller
         navigation.setNavigationBarHidden(true, animated: false)
+        let rawWindow = UIWindow(frame: UIScreen.main.bounds)
 
         // Configurate window
         rawWindow.windowScene = windowScene
