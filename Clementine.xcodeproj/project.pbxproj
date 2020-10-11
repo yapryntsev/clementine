@@ -61,6 +61,7 @@
 		40BE13F3253102F700FE7D8E /* UIFont+StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */; };
 		40BE13F82531033A00FE7D8E /* ColorStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */; };
 		40BE13FD2531034B00FE7D8E /* FontStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE13FC2531034B00FE7D8E /* FontStyleGuide.swift */; };
+		40BE14392533084900FE7D8E /* CarLoanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE14382533084900FE7D8E /* CarLoanController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		40BE13F2253102F700FE7D8E /* UIFont+StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+StyleGuide.swift"; sourceTree = "<group>"; };
 		40BE13F72531033A00FE7D8E /* ColorStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyleGuide.swift; sourceTree = "<group>"; };
 		40BE13FC2531034B00FE7D8E /* FontStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleGuide.swift; sourceTree = "<group>"; };
+		40BE14382533084900FE7D8E /* CarLoanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLoanController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				28D81C2125303598009AC62B /* CameraController.swift */,
 				28063AE525308D64007F50C3 /* MarketplaceController.swift */,
 				28EDC32B2530CFDF00F4A599 /* CarDetailsController.swift */,
+				40BE14382533084900FE7D8E /* CarLoanController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				28EDC3452530DC7E00F4A599 /* Country.swift in Sources */,
 				28063AE625308D64007F50C3 /* MarketplaceController.swift in Sources */,
 				28C5236625309F5B00B8A7CA /* MarketplaceCoordinator.swift in Sources */,
+				40BE14392533084900FE7D8E /* CarLoanController.swift in Sources */,
 				284A3EAA25329AC3007A0E99 /* CarMetaItem.swift in Sources */,
 				284A3E9825324512007A0E99 /* BlueButton.swift in Sources */,
 				284A3E9D25324A20007A0E99 /* GalleryItem.swift in Sources */,
